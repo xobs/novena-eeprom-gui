@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>547</width>
-    <height>385</height>
+    <width>430</width>
+    <height>403</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,14 @@
    <widget class="QTabWidget" name="settingsTab">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
-      <width>541</width>
-      <height>321</height>
+      <width>411</width>
+      <height>341</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="mainTab">
      <attribute name="title">
@@ -80,7 +80,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>150</y>
+        <y>180</y>
         <width>241</width>
         <height>131</height>
        </rect>
@@ -101,7 +101,7 @@
         <string>ES8328 Audio Codec</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="senovoCB">
+      <widget class="QCheckBox" name="senokoCB">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -111,7 +111,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Senovo battery board</string>
+        <string>Senoko battery board</string>
        </property>
       </widget>
       <widget class="QCheckBox" name="pciExpressCB">
@@ -158,7 +158,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>70</y>
+        <y>100</y>
         <width>81</width>
         <height>16</height>
        </rect>
@@ -171,7 +171,7 @@
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>70</y>
+        <y>100</y>
         <width>113</width>
         <height>23</height>
        </rect>
@@ -181,7 +181,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>130</y>
         <width>131</width>
         <height>20</height>
        </rect>
@@ -194,7 +194,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>130</y>
+        <y>160</y>
         <width>121</width>
         <height>20</height>
        </rect>
@@ -207,7 +207,7 @@
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>100</y>
+        <y>130</y>
         <width>113</width>
         <height>23</height>
        </rect>
@@ -217,23 +217,46 @@
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>130</y>
+        <y>160</y>
         <width>113</width>
         <height>23</height>
        </rect>
       </property>
      </widget>
+     <widget class="QLineEdit" name="eepromPageSizeEdit">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>70</y>
+        <width>70</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>120</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>EEPROM Page Size:</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="lvds1Tab">
+    <widget class="QWidget" name="lvds0Tab">
      <attribute name="title">
       <string>LVDS0</string>
      </attribute>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
-        <width>101</width>
+        <width>110</width>
         <height>20</height>
        </rect>
       </property>
@@ -249,7 +272,7 @@
        <rect>
         <x>120</x>
         <y>10</y>
-        <width>70</width>
+        <width>80</width>
         <height>23</height>
        </rect>
       </property>
@@ -480,7 +503,7 @@
        <rect>
         <x>310</x>
         <y>30</y>
-        <width>79</width>
+        <width>80</width>
         <height>23</height>
        </rect>
       </property>
@@ -592,19 +615,19 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>JEIDA</string>
+       <string>PSWG/SWPG</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>JEIDA</string>
+        <string>PSWG/SWPG</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>PSWG/SWPG</string>
+        <string>JEIDA</string>
        </property>
       </item>
      </widget>
@@ -634,24 +657,24 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>8-bit</string>
+       <string>6/10-bit</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>8-bit</string>
+        <string>6/10-bit</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>PSWG/SWPG</string>
+        <string>8-bit</string>
        </property>
       </item>
      </widget>
     </widget>
-    <widget class="QWidget" name="lvds1Tab_2">
+    <widget class="QWidget" name="lvds1Tab">
      <attribute name="title">
       <string>LVDS1</string>
      </attribute>
@@ -831,19 +854,19 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>JEIDA</string>
+       <string>PSWG/SWPG</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>JEIDA</string>
+        <string>PSWG/SWPG</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>PSWG/SWPG</string>
+        <string>JEIDA</string>
        </property>
       </item>
      </widget>
@@ -860,9 +883,9 @@
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
-        <width>101</width>
+        <width>110</width>
         <height>20</height>
        </rect>
       </property>
@@ -996,19 +1019,19 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>8-bit</string>
+       <string>6/10-bit</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>8-bit</string>
+        <string>6/10-bit</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>PSWG/SWPG</string>
+        <string>8-bit</string>
        </property>
       </item>
      </widget>
@@ -1059,7 +1082,7 @@
        <rect>
         <x>120</x>
         <y>10</y>
-        <width>70</width>
+        <width>80</width>
         <height>23</height>
        </rect>
       </property>
@@ -1245,19 +1268,19 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>JEIDA</string>
+       <string>PSWG/SWPG</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>JEIDA</string>
+        <string>PSWG/SWPG</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>PSWG/SWPG</string>
+        <string>JEIDA</string>
        </property>
       </item>
      </widget>
@@ -1274,9 +1297,9 @@
      <widget class="QLabel" name="label_35">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
-        <width>101</width>
+        <width>110</width>
         <height>20</height>
        </rect>
       </property>
@@ -1410,19 +1433,19 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>8-bit</string>
+       <string>6/10-bit</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>8-bit</string>
+        <string>6/10-bit</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>PSWG/SWPG</string>
+        <string>8-bit</string>
        </property>
       </item>
      </widget>
@@ -1473,7 +1496,7 @@
        <rect>
         <x>120</x>
         <y>10</y>
-        <width>70</width>
+        <width>80</width>
         <height>23</height>
        </rect>
       </property>
@@ -1486,7 +1509,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>547</width>
+     <width>430</width>
      <height>20</height>
     </rect>
    </property>
@@ -1526,6 +1549,63 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>settingsTab</tabstop>
+  <tabstop>serialNumberEdit</tabstop>
+  <tabstop>macAddressEdit</tabstop>
+  <tabstop>eepromPageSizeEdit</tabstop>
+  <tabstop>eepromSizeEdit</tabstop>
+  <tabstop>eepromOopsOffsetEdit</tabstop>
+  <tabstop>eepromOopsSizeEdit</tabstop>
+  <tabstop>es8328CB</tabstop>
+  <tabstop>senokoCB</tabstop>
+  <tabstop>pciExpressCB</tabstop>
+  <tabstop>gigabitEthernetCB</tabstop>
+  <tabstop>eepromOopsCB</tabstop>
+  <tabstop>lvds0ClockEdit</tabstop>
+  <tabstop>lvds0WidthEdit</tabstop>
+  <tabstop>lvds0HeightEdit</tabstop>
+  <tabstop>lvds0HBackEdit</tabstop>
+  <tabstop>lvds0HFrontEdit</tabstop>
+  <tabstop>lvds0HSyncLenEdit</tabstop>
+  <tabstop>lvds0VBackEdit</tabstop>
+  <tabstop>lvds0VFrontEdit</tabstop>
+  <tabstop>lvds0VSyncLenEdit</tabstop>
+  <tabstop>lvds0ChannelPresentCB</tabstop>
+  <tabstop>lvds0VSyncPolarityCB</tabstop>
+  <tabstop>lvds0HSyncPolarityCB</tabstop>
+  <tabstop>lvds0DataMappingCB</tabstop>
+  <tabstop>lvds0DataWidthCB</tabstop>
+  <tabstop>lvdsDualLaneCB</tabstop>
+  <tabstop>lvds1ClockEdit</tabstop>
+  <tabstop>lvds1WidthEdit</tabstop>
+  <tabstop>lvds1HeightEdit</tabstop>
+  <tabstop>lvds1HBackEdit</tabstop>
+  <tabstop>lvds1HFrontEdit</tabstop>
+  <tabstop>lvds1HSyncLenEdit</tabstop>
+  <tabstop>lvds1VBackEdit</tabstop>
+  <tabstop>lvds1VFrontEdit</tabstop>
+  <tabstop>lvds1VSyncLenEdit</tabstop>
+  <tabstop>lvds1ChannelPresentCB</tabstop>
+  <tabstop>lvds1VSyncPolarityCB</tabstop>
+  <tabstop>lvds1HSyncPolarityCB</tabstop>
+  <tabstop>lvds1DataMappingCB</tabstop>
+  <tabstop>lvds1DataWidthCB</tabstop>
+  <tabstop>hdmiClockEdit</tabstop>
+  <tabstop>hdmiWidthEdit</tabstop>
+  <tabstop>hdmiHeightEdit</tabstop>
+  <tabstop>hdmiHBackEdit</tabstop>
+  <tabstop>hdmiHFrontEdit</tabstop>
+  <tabstop>hdmiHSyncLenEdit</tabstop>
+  <tabstop>hdmiVBackEdit</tabstop>
+  <tabstop>hdmiVFrontEdit</tabstop>
+  <tabstop>hdmiVSyncLenEdit</tabstop>
+  <tabstop>hdmiChannelPresentCB</tabstop>
+  <tabstop>hdmiVSyncPolarityCB</tabstop>
+  <tabstop>hdmiHSyncPolarityCB</tabstop>
+  <tabstop>hdmiDataMappingCB</tabstop>
+  <tabstop>hdmiDataWidthCB</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
