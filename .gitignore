@@ -1,3 +1,13 @@
 novena-eeprom.h
 novena-eeprom-gui.pro.user
+novena-eeprom-gui.pro.user*
 *.autosave
+*.o
+*.novena-eeprom
+/novena-eeprom-gui
+*.swp
+*.swo
+Makefile
+moc_*
+qrc_*
+ui_*

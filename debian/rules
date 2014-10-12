@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#DH_VERBOSE = 1
+
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+include /usr/share/cdbs/1/class/qmake.mk
+
+override_dh_install:
+
+%:
+	dh $@ --with=systemd

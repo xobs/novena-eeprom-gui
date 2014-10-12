@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="logo">
+    <file>novena_logo_web.png</file>
+  </qresource>
+</RCC>

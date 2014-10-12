@@ -20,3 +20,9 @@ HEADERS  += mainwindow.h \
     EepromDev.h
 
 FORMS    += mainwindow.ui
+
+OTHER_FILES += \
+    novena_logo_web.png
+
+RESOURCES += \
+    logo.qrc

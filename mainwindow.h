@@ -24,8 +24,17 @@ public:
 
 private slots:
     void on_serialNumberEdit_editingFinished();
-
     void on_lvdsDualLaneCB_toggled(bool checked);
+    void on_actionSaveToEeprom_triggered(void);
+    void on_actionExportToFile_triggered(void);
+    void on_actionImportFromFile_triggered(void);
+    void on_hdmiIgnoreSettingsCB_toggled(bool checked);
+    void on_hdmiChannelPresentCB_toggled(bool checked);
+    void on_lvds0ChannelPresentCB_toggled(bool checked);
+    void on_lvds1ChannelPresentCB_toggled(bool checked);
+    void setHdmiEnabled(bool enabled, bool ignore_settings);
+    void setLVDS0Enabled(bool checked);
+    void setLVDS1Enabled(bool checked);
 
 private:
     template <typename T>
@@ -38,8 +47,8 @@ private:
 
     void showError(const std::string& err_s);
 
-    bool lineEditToMac(QLineEdit* edit, const char* field_name, uint8_t* macp);
-    bool lineEditToNum(QLineEdit* edit, const char* field_name, uint32_t* num);
+    bool lineEditToMac(QLineEdit* edit, uint8_t* macp);
+    bool lineEditToNum(QLineEdit* edit, uint32_t* num);
     void fieldToCheckBox(QCheckBox* cb, const uint32_t& fld);
     void fieldToComboBox(QComboBox* cb, const uint32_t& fld);
     void setLVDSDualLane(bool enabled);

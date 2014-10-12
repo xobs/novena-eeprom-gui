@@ -9,8 +9,8 @@ class EepromDev
 public:
     EepromDev();
 
-    bool loadFromDevice();
-	bool saveToDevice();
+    bool loadFromDevice(void);
+	bool saveToDevice(void);
 
     static const int EepromAddress = (0xac>>1);
     static const char* I2CBus;// = "/dev/i2c-2";
@@ -30,6 +30,8 @@ public:
 
 private:
 	bool openDevice(int& fd);
+	bool isValidData(void);
+    void loadFromDefaults(void);
 
 private:
     std::string error_;

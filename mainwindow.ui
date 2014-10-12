@@ -6,1530 +6,957 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>430</width>
-    <height>403</height>
+    <width>513</width>
+    <height>533</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Novena EEPROM Settings</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="settingsTab">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>411</width>
-      <height>341</height>
-     </rect>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="mainTab">
-     <attribute name="title">
-      <string>Base</string>
-     </attribute>
-     <widget class="QLabel" name="serialNumberLabel">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="settingsTab">
+      <property name="currentIndex">
+       <number>0</number>
       </property>
-      <property name="text">
-       <string>Serial Number:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="macAddressLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>MAC Address:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="serialNumberEdit">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>10</y>
-        <width>113</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="macAddressEdit">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>40</y>
-        <width>121</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>180</y>
-        <width>241</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Features</string>
-      </property>
-      <widget class="QCheckBox" name="es8328CB">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>151</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>ES8328 Audio Codec</string>
-       </property>
+      <widget class="QWidget" name="mainTab">
+       <attribute name="title">
+        <string>Base</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <widget class="QLabel" name="macAddressLabel">
+          <property name="text">
+           <string>MAC Address:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLineEdit" name="eepromOopsOffsetEdit"/>
+        </item>
+        <item row="0" column="4" rowspan="8">
+         <widget class="QLabel" name="label_44">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="logo.qrc">:/logo/novena_logo_web.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="3">
+         <widget class="QLineEdit" name="serialNumberEdit"/>
+        </item>
+        <item row="1" column="1" colspan="3">
+         <widget class="QLineEdit" name="macAddressEdit"/>
+        </item>
+        <item row="5" column="0" colspan="3">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>EEPROM Oops Size:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="3">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>EEPROM Oops Offset:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLineEdit" name="eepromOopsSizeEdit"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="serialNumberLabel">
+          <property name="text">
+           <string>Serial Number:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2" colspan="2">
+         <widget class="QLineEdit" name="eepromPageSizeEdit"/>
+        </item>
+        <item row="7" column="0" colspan="4">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Features</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QCheckBox" name="es8328CB">
+             <property name="text">
+              <string>ES8328 Audio Codec</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="senokoCB">
+             <property name="text">
+              <string>Senoko battery board</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="pciExpressCB">
+             <property name="text">
+              <string>PCI Express support</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="gigabitEthernetCB">
+             <property name="text">
+              <string>Gigabit Ethernet</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="eepromOopsCB">
+             <property name="text">
+              <string>EEPROM Oops storage</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="3">
+         <widget class="QLineEdit" name="eepromSizeEdit"/>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="label_43">
+          <property name="text">
+           <string>EEPROM Page Size:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>EEPROM Size:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="4">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Root filesystem location</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="rootFsMMC">
+             <property name="text">
+              <string>Internal MMC</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="rootFsSATA">
+             <property name="text">
+              <string>SATA disk</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QCheckBox" name="senokoCB">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>191</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Senoko battery board</string>
-       </property>
+      <widget class="QWidget" name="lvds0Tab">
+       <attribute name="title">
+        <string>LVDS0</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="14" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds0VSyncPolarityCB">
+          <property name="currentText">
+           <string>Positive</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Positive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Negative</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Clock Frequency:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="0">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>V Sync Len:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="1">
+         <widget class="QLineEdit" name="lvds0VSyncLenEdit"/>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLineEdit" name="lvds0VBackEdit"/>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>H Front Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds0ClockEdit"/>
+        </item>
+        <item row="4" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds0HeightEdit"/>
+        </item>
+        <item row="2" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds0WidthEdit"/>
+        </item>
+        <item row="7" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds0DataWidthCB">
+          <property name="currentText">
+           <string>6-bit</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>6-bit</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8-bit</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>V Back Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds0HFrontEdit"/>
+        </item>
+        <item row="0" column="2" colspan="2">
+         <widget class="QCheckBox" name="lvds0ChannelPresentCB">
+          <property name="text">
+           <string>Enable this channel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2" rowspan="2">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>V Sync Polarity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>H Sync Len:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Height:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds0HBackEdit"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>H Back Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>V Front Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="1">
+         <widget class="QLineEdit" name="lvds0VFrontEdit"/>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLineEdit" name="lvds0HSyncLenEdit"/>
+        </item>
+        <item row="3" column="2" rowspan="2">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>H Sync Polarity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds0HSyncPolarityCB">
+          <property name="currentText">
+           <string>Positive</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Positive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Negative</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="9" column="2" rowspan="2" colspan="2">
+         <widget class="QCheckBox" name="lvdsDualLaneCB">
+          <property name="text">
+           <string>Dual-lane</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2" rowspan="2">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>Data Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2" rowspan="2">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Data Mapping:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds0DataMappingCB">
+          <property name="currentText">
+           <string>PSWG/SWPG</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>PSWG/SWPG</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>JEIDA</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QCheckBox" name="pciExpressCB">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>60</y>
-         <width>151</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>PCI Express support</string>
-       </property>
+      <widget class="QWidget" name="lvds1Tab">
+       <attribute name="title">
+        <string>LVDS1</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds1HSyncPolarityCB">
+          <property name="currentText">
+           <string>Positive</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Positive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Negative</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds1WidthEdit"/>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>H Front Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLineEdit" name="lvds1HFrontEdit"/>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>H Sync Len:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLineEdit" name="lvds1HSyncLenEdit"/>
+        </item>
+        <item row="4" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds1HeightEdit"/>
+        </item>
+        <item row="5" column="2" rowspan="2">
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>Data Mapping:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds1HBackEdit"/>
+        </item>
+        <item row="7" column="2" rowspan="2">
+         <widget class="QLabel" name="label_29">
+          <property name="text">
+           <string>Data Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2" rowspan="2">
+         <widget class="QLabel" name="label_26">
+          <property name="text">
+           <string>H Sync Polarity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds1VSyncPolarityCB">
+          <property name="currentText">
+           <string>Positive</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Positive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Negative</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>V Back Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLineEdit" name="lvds1VBackEdit"/>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_28">
+          <property name="text">
+           <string>V Front Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLineEdit" name="lvds1VFrontEdit"/>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_24">
+          <property name="text">
+           <string>V Sync Len:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="1">
+         <widget class="QLineEdit" name="lvds1VSyncLenEdit"/>
+        </item>
+        <item row="7" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds1DataWidthCB">
+          <property name="currentText">
+           <string>6-bit</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>6-bit</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8-bit</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="2">
+         <widget class="QCheckBox" name="lvds1ChannelPresentCB">
+          <property name="text">
+           <string>Enable this channel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_27">
+          <property name="text">
+           <string>H Back Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_22">
+          <property name="text">
+           <string>Clock Frequency:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3" rowspan="2">
+         <widget class="QComboBox" name="lvds1DataMappingCB">
+          <property name="currentText">
+           <string>PSWG/SWPG</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>PSWG/SWPG</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>JEIDA</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="2" rowspan="2">
+         <widget class="QLabel" name="label_19">
+          <property name="text">
+           <string>V Sync Polarity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_25">
+          <property name="text">
+           <string>Height:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QLineEdit" name="lvds1ClockEdit"/>
+        </item>
+        <item row="13" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
-      <widget class="QCheckBox" name="gigabitEthernetCB">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>80</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Gigabit Ethernet</string>
-       </property>
+      <widget class="QWidget" name="widget">
+       <attribute name="title">
+        <string>HDMI</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_40">
+          <property name="text">
+           <string>H Back Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_35">
+          <property name="text">
+           <string>Clock Frequency:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="2">
+         <widget class="QCheckBox" name="hdmiChannelPresentCB">
+          <property name="text">
+           <string>Enable HDMI</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QLineEdit" name="hdmiClockEdit"/>
+        </item>
+        <item row="2" column="1" rowspan="2">
+         <widget class="QLineEdit" name="hdmiWidthEdit"/>
+        </item>
+        <item row="6" column="1" rowspan="2">
+         <widget class="QLineEdit" name="hdmiHBackEdit"/>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_36">
+          <property name="text">
+           <string>V Back Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLineEdit" name="hdmiVBackEdit"/>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_41">
+          <property name="text">
+           <string>V Front Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLineEdit" name="hdmiVFrontEdit"/>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_37">
+          <property name="text">
+           <string>V Sync Len:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="1">
+         <widget class="QLineEdit" name="hdmiVSyncLenEdit"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_38">
+          <property name="text">
+           <string>Height:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1" rowspan="2">
+         <widget class="QLineEdit" name="hdmiHeightEdit"/>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_34">
+          <property name="text">
+           <string>H Front Porch:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLineEdit" name="hdmiHFrontEdit"/>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="label_33">
+          <property name="text">
+           <string>H Sync Len:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLineEdit" name="hdmiHSyncLenEdit"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_30">
+          <property name="text">
+           <string>Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="7" column="2" rowspan="2">
+         <widget class="QLabel" name="label_42">
+          <property name="text">
+           <string>Data Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="3" rowspan="2">
+         <widget class="QComboBox" name="hdmiDataWidthCB">
+          <property name="currentText">
+           <string>10-bit</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>10-bit</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8-bit</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLabel" name="label_39">
+          <property name="text">
+           <string>H Sync Polarity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <widget class="QComboBox" name="hdmiHSyncPolarityCB">
+          <property name="currentText">
+           <string>Positive</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Positive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Negative</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QComboBox" name="hdmiVSyncPolarityCB">
+          <property name="currentText">
+           <string>Positive</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Positive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Negative</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="label_32">
+          <property name="text">
+           <string>V Sync Polarity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2" colspan="2">
+         <widget class="QCheckBox" name="hdmiIgnoreSettingsCB">
+          <property name="text">
+           <string>Automatically detect settings</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QCheckBox" name="eepromOopsCB">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>100</y>
-         <width>161</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>EEPROM Oops storage</string>
-       </property>
-      </widget>
      </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>EEPROM Size:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eepromSizeEdit">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>100</y>
-        <width>113</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>130</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>EEPROM Oops Offset:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>160</y>
-        <width>121</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>EEPROM Oops Size:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eepromOopsOffsetEdit">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>130</y>
-        <width>113</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eepromOopsSizeEdit">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>160</y>
-        <width>113</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eepromPageSizeEdit">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>70</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_43">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>70</y>
-        <width>120</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>EEPROM Page Size:</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="lvds0Tab">
-     <attribute name="title">
-      <string>LVDS0</string>
-     </attribute>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>110</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Clock Frequency:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0ClockEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>80</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>40</y>
-        <width>57</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Width:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0WidthEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>40</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_6">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>70</y>
-        <width>51</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Height:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0HeightEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>70</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Back Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>130</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Front Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0HBackEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>100</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0HFrontEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>130</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0HSyncLenEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>160</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>160</y>
-        <width>70</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Sync Len:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0VBackEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>190</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_10">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>190</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Back Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>220</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Front Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0VFrontEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>220</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds0VSyncLenEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>250</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_12">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>250</y>
-        <width>70</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Sync Len:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="lvds0ChannelPresentCB">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>10</y>
-        <width>130</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Channel Present</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds0VSyncPolarityCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>30</y>
-        <width>80</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>Positive</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Positive</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Negative</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>30</y>
-        <width>100</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Sync Polarity:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_14">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>60</y>
-        <width>100</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Sync Polarity:</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds0HSyncPolarityCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>60</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>Positive</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Positive</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Negative</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QCheckBox" name="lvdsDualLaneCB">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>150</y>
-        <width>130</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Dual-lane</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>90</y>
-        <width>90</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data Mapping:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds0DataMappingCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>90</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>PSWG/SWPG</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>PSWG/SWPG</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>JEIDA</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="label_16">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>120</y>
-        <width>90</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data Width:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds0DataWidthCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>120</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>6/10-bit</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>6/10-bit</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>8-bit</string>
-       </property>
-      </item>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="lvds1Tab">
-     <attribute name="title">
-      <string>LVDS1</string>
-     </attribute>
-     <widget class="QLineEdit" name="lvds1HSyncLenEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>160</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds1HSyncPolarityCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>60</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>Positive</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Positive</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Negative</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLineEdit" name="lvds1VSyncLenEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>250</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_17">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>40</y>
-        <width>57</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Width:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_18">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>90</y>
-        <width>90</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data Mapping:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds1HeightEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>70</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="lvds1ChannelPresentCB">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>10</y>
-        <width>130</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Channel Present</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_19">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>30</y>
-        <width>100</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Sync Polarity:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_20">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>160</y>
-        <width>70</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Sync Len:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds1HFrontEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>130</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>130</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Front Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds1VFrontEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>220</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds1DataMappingCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>90</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>PSWG/SWPG</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>PSWG/SWPG</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>JEIDA</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLineEdit" name="lvds1WidthEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>40</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_22">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>110</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Clock Frequency:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_23">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>190</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Back Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_24">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>250</y>
-        <width>70</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Sync Len:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_25">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>70</y>
-        <width>51</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Height:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_26">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>60</y>
-        <width>100</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Sync Polarity:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds1HBackEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>100</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_27">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Back Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds1VBackEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>190</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_28">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>220</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Front Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="lvds1DataWidthCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>120</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>6/10-bit</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>6/10-bit</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>8-bit</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="lvds1VSyncPolarityCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>30</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>Positive</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Positive</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Negative</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="label_29">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>120</y>
-        <width>90</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data Width:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lvds1ClockEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>80</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="hdmiTab">
-     <attribute name="title">
-      <string>HDMI</string>
-     </attribute>
-     <widget class="QLineEdit" name="hdmiHSyncLenEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>160</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="hdmiHSyncPolarityCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>60</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>Positive</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Positive</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Negative</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLineEdit" name="hdmiVSyncLenEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>250</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_30">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>40</y>
-        <width>57</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Width:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_31">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>90</y>
-        <width>90</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data Mapping:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="hdmiHeightEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>70</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="hdmiChannelPresentCB">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>10</y>
-        <width>130</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Channel Present</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_32">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>30</y>
-        <width>100</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Sync Polarity:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_33">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>160</y>
-        <width>70</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Sync Len:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="hdmiHFrontEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>130</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_34">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>130</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Front Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="hdmiVFrontEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>220</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="hdmiDataMappingCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>90</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>PSWG/SWPG</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>PSWG/SWPG</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>JEIDA</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLineEdit" name="hdmiWidthEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>40</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_35">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>110</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Clock Frequency:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_36">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>190</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Back Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_37">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>250</y>
-        <width>70</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Sync Len:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_38">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>70</y>
-        <width>51</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Height:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_39">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>60</y>
-        <width>100</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Sync Polarity:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="hdmiHBackEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>100</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_40">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>H Back Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="hdmiVBackEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>190</y>
-        <width>70</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_41">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>220</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>V Front Porch:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="hdmiDataWidthCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>120</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>6/10-bit</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>6/10-bit</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>8-bit</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="hdmiVSyncPolarityCB">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>30</y>
-        <width>79</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="currentText">
-       <string>Positive</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Positive</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Negative</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="label_42">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>120</y>
-        <width>90</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data Width:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="hdmiClockEdit">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>80</width>
-        <height>23</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-   </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>430</width>
-     <height>20</height>
+     <width>513</width>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="mainMenu">
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionLoad"/>
-    <addaction name="actionSave"/>
+    <addaction name="actionImportFromFile"/>
+    <addaction name="actionExportToFile"/>
+    <addaction name="actionSaveToEeprom"/>
     <addaction name="actionExit"/>
    </widget>
    <addaction name="mainMenu"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionLoad">
@@ -1537,14 +964,36 @@
     <string>Load</string>
    </property>
   </action>
-  <action name="actionSave">
+  <action name="actionSaveToEeprom">
    <property name="text">
-    <string>Save</string>
+    <string>Save to EEPROM</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionExportToFile">
+   <property name="text">
+    <string>Export to file...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionImportFromFile">
+   <property name="text">
+    <string>Import from file...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
  </widget>
@@ -1601,11 +1050,27 @@
   <tabstop>hdmiVFrontEdit</tabstop>
   <tabstop>hdmiVSyncLenEdit</tabstop>
   <tabstop>hdmiChannelPresentCB</tabstop>
-  <tabstop>hdmiVSyncPolarityCB</tabstop>
-  <tabstop>hdmiHSyncPolarityCB</tabstop>
-  <tabstop>hdmiDataMappingCB</tabstop>
   <tabstop>hdmiDataWidthCB</tabstop>
  </tabstops>
- <resources/>
- <connections/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
