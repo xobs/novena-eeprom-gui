@@ -1,0 +1,5 @@
+novena-eeprom-gui usr/bin/
+novena-eeprom-gui.1 usr/share/man/man1
+novena-eeprom-gui.desktop usr/share/applications
+novena-eeprom-gui.png usr/share/novena-eeprom-gui
+
