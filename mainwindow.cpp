@@ -223,6 +223,8 @@ bool MainWindow::guiToData(novena_eeprom_data& eeprom_data)
         eeprom_data.features |= feature_pcie;
     if (ui->gigabitEthernetCB->checkState() == Qt::Checked)
         eeprom_data.features |= feature_gbit;
+    if (ui->it6251CB->checkState() == Qt::Checked)
+        eeprom_data.features |= feature_retina;
     if (ui->eepromOopsCB->checkState() == Qt::Checked)
         eeprom_data.features |= feature_eepromoops;
     if (ui->rootFsSATA->isChecked())
@@ -255,7 +257,6 @@ bool MainWindow::guiToData(novena_eeprom_data& eeprom_data)
     if (ui->lvdsDualLaneCB->checkState() == Qt::Checked) {
         eeprom_data.lvds1.flags |= dual_channel;
         eeprom_data.lvds2.flags |= channel_present;
-        eeprom_data.features |= feature_retina;
     }
 
     eeprom_data.lvds2.frequency = ui->lvds1ClockEdit->text().toInt();

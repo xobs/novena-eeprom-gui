@@ -122,6 +122,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QCheckBox" name="it6251CB">
+             <property name="text">
+              <string>IT6251 LVDS-to-eDP bridge</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QCheckBox" name="eepromOopsCB">
              <property name="text">
               <string>EEPROM Oops storage</string>

@@ -60,7 +60,7 @@ void EepromDev::loadFromDefaults(void)
     data_.version = NOVENA_VERSION;
 
     data_.features = feature_es8328 | feature_pcie | feature_gbit |
-                     feature_hdmi | feature_eepromoops;
+                     feature_hdmi | feature_retina | feature_eepromoops;
 
     data_.eepromoops_offset = 4096;
     data_.eepromoops_length = 61440;
@@ -98,6 +98,42 @@ bool EepromDev::loadFromDevice(void)
 
     if (!isValidData())
         loadFromDefaults();
+
+    /* Update v1 to v2 */
+    if (data_.version == 1) {
+        data_.features |= feature_eepromoops;
+
+        data_.eepromoops_offset = 4096;
+        data_.eepromoops_length = 61440;
+
+        data_.eeprom_size = 65536;
+        data_.page_size = 128;
+
+        if (data_.features & feature_retina) {
+            data_.lvds1.frequency = 148500000;
+            data_.lvds1.hactive = 1920;
+            data_.lvds1.vactive = 1080;
+            data_.lvds1.hback_porch = 148;
+            data_.lvds1.hfront_porch = 88;
+            data_.lvds1.hsync_len = 44;
+            data_.lvds1.vback_porch = 36;
+            data_.lvds1.vfront_porch = 4;
+            data_.lvds1.vsync_len = 5;
+            data_.lvds1.flags = vsync_polarity | hsync_polarity
+                              | data_width_8bit | mapping_jeida
+                              | dual_channel | channel_present;
+
+            data_.lvds2.flags = channel_present;
+        }
+
+        if (data_.features & feature_hdmi) {
+            /* Pull HDMI settings from e.g. EDID */
+            data_.hdmi.flags = channel_present | ignore_settings
+                             | data_width_8bit;
+        }
+
+        data_.version = 2;
+    }
 
     return ret_value;
 }
