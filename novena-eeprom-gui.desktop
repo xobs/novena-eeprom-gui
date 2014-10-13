@@ -7,5 +7,4 @@ Icon=/usr/share/novena-eeprom-gui/novena-eeprom-gui.png
 Exec=novena-eeprom-gui
 Terminal=false
 Type=Application
-Categories=Qt;Utility;
-
+Categories=Application;System;Settings
