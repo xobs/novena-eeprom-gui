@@ -66,11 +66,11 @@ void MainWindow::dataToGui(novena_eeprom_data& eeprom_data)
     numToLineEdit(ui->eepromOopsOffsetEdit, eeprom_data.eepromoops_offset);
     numToLineEdit(ui->eepromOopsSizeEdit, eeprom_data.eepromoops_length);
 
-    fieldToCheckBox(ui->es8328CB, eeprom_data.features & EepromDev::ES8328_F);
-    fieldToCheckBox(ui->senokoCB, eeprom_data.features & EepromDev::Senoko_F);
-    fieldToCheckBox(ui->pciExpressCB, eeprom_data.features & EepromDev::Pcie_F);
-    fieldToCheckBox(ui->gigabitEthernetCB, eeprom_data.features & EepromDev::Gbit_F);
-    fieldToCheckBox(ui->eepromOopsCB, eeprom_data.features & EepromDev::EepromOops_F);
+    fieldToCheckBox(ui->es8328CB, eeprom_data.features & feature_es8328);
+    fieldToCheckBox(ui->senokoCB, eeprom_data.features & feature_senoko);
+    fieldToCheckBox(ui->pciExpressCB, eeprom_data.features & feature_pcie);
+    fieldToCheckBox(ui->gigabitEthernetCB, eeprom_data.features & feature_gbit);
+    fieldToCheckBox(ui->eepromOopsCB, eeprom_data.features & feature_eepromoops);
 
     numToLineEdit(ui->lvds0ClockEdit, eeprom_data.lvds1.frequency);
     numToLineEdit(ui->lvds0WidthEdit, eeprom_data.lvds1.hactive);
