@@ -52,7 +52,7 @@ void MainWindow::dataToGui(novena_eeprom_data& eeprom_data)
             , eeprom_data.mac[3], eeprom_data.mac[4], eeprom_data.mac[5]);
     ui->macAddressEdit->setText(macbuf);
 
-    if (eeprom_data.features & feature_bootsrc_sata) {
+    if (eeprom_data.features & feature_rootsrc_sata) {
         ui->rootFsMMC->setChecked(0);
         ui->rootFsSATA->setChecked(1);
     }
@@ -226,7 +226,7 @@ bool MainWindow::guiToData(novena_eeprom_data& eeprom_data)
     if (ui->eepromOopsCB->checkState() == Qt::Checked)
         eeprom_data.features |= feature_eepromoops;
     if (ui->rootFsSATA->isChecked())
-        eeprom_data.features |= feature_bootsrc_sata;
+        eeprom_data.features |= feature_rootsrc_sata;
 
     eeprom_data.lvds1.flags = 0;
     eeprom_data.lvds2.flags = 0;

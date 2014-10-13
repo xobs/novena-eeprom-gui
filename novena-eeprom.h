@@ -77,7 +77,7 @@ enum feature_flags {
     feature_gbit = 0x0020,
     feature_hdmi = 0x0040,
     feature_eepromoops = 0x0080,
-    feature_bootsrc_sata = 0x0100,
+    feature_rootsrc_sata = 0x0100,
 };
 
 #ifndef __cplusplus
