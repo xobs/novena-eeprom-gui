@@ -1,4 +1,3 @@
-novena-eeprom.h
 novena-eeprom-gui.pro.user
 novena-eeprom-gui.pro.user*
 *.autosave
@@ -11,3 +10,4 @@ Makefile
 moc_*
 qrc_*
 ui_*
+/debian/novena-eeprom-gui.debhelper*
