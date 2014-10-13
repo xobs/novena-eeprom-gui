@@ -41,7 +41,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="logo.qrc">:/logo/novena_logo_web.png</pixmap>
+           <pixmap resource="logo.qrc">:/logo/novena-eeprom-gui.png</pixmap>
           </property>
          </widget>
         </item>

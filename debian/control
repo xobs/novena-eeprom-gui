@@ -2,7 +2,7 @@ Source: novena-eeprom-gui
 Section: misc
 Priority: optional
 Maintainer: Sean Cross <xobs@kosagi.com>
-Build-Depends: debhelper (>= 9), cdbs (>= 0.4)
+Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 Homepage: http://kosagi.com/
 #Vcs-Git: git://anonscm.debian.org/collab-maint/novena-eeprom-gui.git

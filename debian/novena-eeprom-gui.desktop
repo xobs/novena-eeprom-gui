@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Novena EEPROM GUI
+GenericName=Wallpaper Changer
+Comment=Edit the Novena onboard EEPROM
+Icon=/usr/share/novena-eeprom-gui/novena-eeprom-gui.png
+Exec=novena-eeprom-gui
+Terminal=false
+Type=Application
+Categories=Qt;Utility;
+
