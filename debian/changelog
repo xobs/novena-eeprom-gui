@@ -1,5 +1,5 @@
-novena-eeprom-gui (1.0-1) unstable; urgency=low
+novena-eeprom-gui (1.0-r1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
- -- unknown <xobs@xobs-novena>  Sun, 12 Oct 2014 23:03:34 +0800
+ -- Sean Cross <xobs@kosagi.com>  Sun, 12 Oct 2014 23:03:34 +0800

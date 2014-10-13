@@ -11,3 +11,6 @@ moc_*
 qrc_*
 ui_*
 /debian/novena-eeprom-gui.debhelper*
+/debian/files
+/debian/novena-eeprom-gui/
+/debian/novena-eeprom-gui.substvars
