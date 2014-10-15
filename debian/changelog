@@ -1,3 +1,9 @@
+novena-eeprom-gui (1.2-r1) unstable; urgency=medium
+
+  * Fix it6251 checkbox on startup
+
+ -- Sean Cross <xobs@kosagi.com>  Wed, 15 Oct 2014 15:25:12 +0800
+
 novena-eeprom-gui (1.0-r1) unstable; urgency=low
 
   * Initial release

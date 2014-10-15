@@ -70,6 +70,7 @@ void MainWindow::dataToGui(novena_eeprom_data& eeprom_data)
     fieldToCheckBox(ui->senokoCB, eeprom_data.features & feature_senoko);
     fieldToCheckBox(ui->pciExpressCB, eeprom_data.features & feature_pcie);
     fieldToCheckBox(ui->gigabitEthernetCB, eeprom_data.features & feature_gbit);
+    fieldToCheckBox(ui->it6251CB, eeprom_data.features & feature_retina);
     fieldToCheckBox(ui->eepromOopsCB, eeprom_data.features & feature_eepromoops);
 
     numToLineEdit(ui->lvds0ClockEdit, eeprom_data.lvds1.frequency);
