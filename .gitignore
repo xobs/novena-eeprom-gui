@@ -14,3 +14,4 @@ ui_*
 /debian/files
 /debian/novena-eeprom-gui/
 /debian/novena-eeprom-gui.substvars
+/novena-eeprom-gui.pro.user
