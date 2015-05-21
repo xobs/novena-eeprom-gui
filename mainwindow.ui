@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>513</width>
-    <height>533</height>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -132,6 +132,13 @@
             <widget class="QCheckBox" name="eepromOopsCB">
              <property name="text">
               <string>EEPROM Oops storage</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="lidBootBlockCB">
+             <property name="text">
+              <string>Don't boot when lid is shut</string>
              </property>
             </widget>
            </item>
@@ -951,7 +958,7 @@
      <x>0</x>
      <y>0</y>
      <width>513</width>
-     <height>19</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="mainMenu">

@@ -72,6 +72,7 @@ void MainWindow::dataToGui(novena_eeprom_data& eeprom_data)
     fieldToCheckBox(ui->gigabitEthernetCB, eeprom_data.features & feature_gbit);
     fieldToCheckBox(ui->it6251CB, eeprom_data.features & feature_retina);
     fieldToCheckBox(ui->eepromOopsCB, eeprom_data.features & feature_eepromoops);
+    fieldToCheckBox(ui->lidBootBlockCB, eeprom_data.features & feature_lidbootblock);
 
     numToLineEdit(ui->lvds0ClockEdit, eeprom_data.lvds1.frequency);
     numToLineEdit(ui->lvds0WidthEdit, eeprom_data.lvds1.hactive);
@@ -230,6 +231,8 @@ bool MainWindow::guiToData(novena_eeprom_data& eeprom_data)
         eeprom_data.features |= feature_eepromoops;
     if (ui->rootFsSATA->isChecked())
         eeprom_data.features |= feature_rootsrc_sata;
+    if (ui->lidBootBlockCB->checkState() == Qt::Checked)
+        eeprom_data.features |= feature_lidbootblock;
 
     eeprom_data.lvds1.flags = 0;
     eeprom_data.lvds2.flags = 0;
