@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     EepromDev.cpp
 
 HEADERS  += mainwindow.h \
-    EepromDev.h
+    EepromDev.h \
+    novena-eeprom.h
 
 FORMS    += mainwindow.ui
 
