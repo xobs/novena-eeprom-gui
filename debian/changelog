@@ -1,3 +1,9 @@
+novena-eeprom-gui (1.3-r1) unstable; urgency=medium
+
+  * Add lidbootblock feature
+
+ -- Sean Cross <xobs@kosagi.com>  Thu, 21 May 2015 14:25:20 +0800
+
 novena-eeprom-gui (1.2-r1) unstable; urgency=medium
 
   * Fix it6251 checkbox on startup
