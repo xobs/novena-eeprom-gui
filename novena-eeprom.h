@@ -78,6 +78,7 @@ enum feature_flags {
     feature_hdmi = 0x0040,
     feature_eepromoops = 0x0080,
     feature_rootsrc_sata = 0x0100,
+    feature_lidbootblock = 0x0200,
 };
 
 #ifndef __cplusplus
@@ -125,6 +126,16 @@ struct feature {
         .name  = "eepromoops",
         .flags = feature_eepromoops,
         .descr = "EEPROM Oops storage",
+    },
+    {
+        .name  = "rootsrc_sata",
+        .flags = feature_rootsrc_sata,
+        .descr = "Root filesystem is on SATA",
+    },
+    {
+        .name  = "lidbootblock",
+        .flags = feature_lidbootblock,
+        .descr = "Prevent booting when lid is closed",
     },
     {} /* Sentinal */
 };
